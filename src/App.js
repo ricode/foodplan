@@ -1,40 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import stirfry from './images/stirfry.js';
-import spaghetti from './images/spaghetti.js'
-import fajitas from './images/fajitas.js'
-import bangers from './images/bangers.js'
-import FoodCard from './Card'
+
+import Dashboard from './Dashboard';
+import NewMeal from './NewMeal';
 
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className="App">
-
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 style={{ marginTop: '14px' }}>FOOD PLAN</h1>
-
+        <Router>
+          <div>
+            <Route exact path='/' component={Dashboard} />
+            <Route path='/new' component={NewMeal} />
           </div>
-          <br />
-          <p className="App-intro">
-            Shopping lists. fast.
-        </p>
-
-        <FoodCard title='Stir Fry' picture={stirfry} />
-
-        <FoodCard title='Spaghetti Bolognese' picture={spaghetti}/>
-
-        <FoodCard title='Fajitas' picture={fajitas}/>
-
-        <FoodCard title='Sausage & mash' picture={bangers}/>
-
-        </div>
-      </MuiThemeProvider>
-    );
+        </Router>
+        </MuiThemeProvider>
+        );
   }
 }
 
