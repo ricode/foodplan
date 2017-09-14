@@ -20,6 +20,7 @@
 
 .App-intro {
   font-size: large;
+  margin-top:32px;
 }
 
 @keyframes App-logo-spin {
