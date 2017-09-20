@@ -39,7 +39,6 @@ class Dashboard extends Component {
         </p>
         <RaisedButton  label='Add meal' labelPosition="after"
             primary={true}
-            linkButton={true}
             href="/new"
             containerElement="label"
             icon={<FoodMenu />}
